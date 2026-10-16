@@ -10,7 +10,7 @@ class Mcc < Formula
   depends_on :macos
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/mcc"
   end
 
